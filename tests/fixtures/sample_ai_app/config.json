@@ -1,0 +1,9 @@
+{
+  "_name_or_path": "mistralai/Mistral-7B-v0.1",
+  "architectures": [
+    "MistralForCausalLM"
+  ],
+  "model_type": "mistral",
+  "transformers_version": "4.39.0",
+  "license": "Apache-2.0"
+}

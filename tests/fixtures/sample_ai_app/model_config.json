@@ -1,0 +1,16 @@
+{
+  "_name_or_path": "stabilityai/stable-diffusion-xl-base-1.0",
+  "model_type": "stable-diffusion-xl",
+  "license": "CreativeML OpenRAIL-M",
+  "version": "1.0",
+  "organization": "Stability AI Ltd.",
+  "models": [
+    {
+      "model_id": "lmsys/vicuna-13b-v1.5",
+      "model_type": "llama",
+      "license": "CC-BY-NC-4.0",
+      "version": "1.5",
+      "organization": "Large Model Systems Organization (LMSYS)"
+    }
+  ]
+}

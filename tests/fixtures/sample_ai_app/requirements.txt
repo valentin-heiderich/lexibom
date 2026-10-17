@@ -1,0 +1,8 @@
+# Core web & ML dependencies (Permissive)
+fastapi==0.110.0
+pydantic==2.6.4
+transformers==4.39.0
+requests==2.31.0
+
+# Network Copyleft dependency (AGPL-3.0)
+agpl-scraper==1.4.2  # license: AGPL-3.0-only

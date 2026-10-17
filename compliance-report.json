@@ -1,0 +1,574 @@
+{
+  "tool": {
+    "name": "LexiBOM",
+    "version": "0.1.0",
+    "schema_version": "1.0.0"
+  },
+  "generated_at": "2026-10-17T14:06:54.825406+00:00",
+  "audit_context": {
+    "project_path": "tests/fixtures/sample_ai_app",
+    "target_distribution_type": "SAAS_HOSTED",
+    "is_commercial": true
+  },
+  "status": "FAIL",
+  "summary": {
+    "total_components": 13,
+    "critical_violations": 2,
+    "warnings": 2,
+    "critical_components": 2,
+    "warning_components": 2,
+    "compliant_components": 9,
+    "inter_license_conflicts": 0,
+    "by_component_type": {
+      "python": 5,
+      "node": 4,
+      "ml_model": 4
+    }
+  },
+  "components": [
+    {
+      "name": "fastapi",
+      "version": "0.110.0",
+      "component_type": "python",
+      "purl": "pkg:pypi/fastapi@0.110.0",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "source_file": "requirements.txt",
+      "copyright_holder": "Sebastián Ramírez",
+      "homepage": "https://pypi.org/project/fastapi/",
+      "metadata": {
+        "manifest_type": "requirements.txt",
+        "line": 2,
+        "source_files": [
+          "requirements.txt"
+        ]
+      }
+    },
+    {
+      "name": "pydantic",
+      "version": "2.6.4",
+      "component_type": "python",
+      "purl": "pkg:pypi/pydantic@2.6.4",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "source_file": "requirements.txt",
+      "copyright_holder": "Samuel Colvin and Contributors",
+      "homepage": "https://pypi.org/project/pydantic/",
+      "metadata": {
+        "manifest_type": "requirements.txt",
+        "line": 3,
+        "source_files": [
+          "requirements.txt"
+        ]
+      }
+    },
+    {
+      "name": "transformers",
+      "version": "4.39.0",
+      "component_type": "python",
+      "purl": "pkg:pypi/transformers@4.39.0",
+      "raw_license": "Apache-2.0",
+      "normalized_license": "Apache-2.0",
+      "source_file": "requirements.txt",
+      "copyright_holder": "The HuggingFace Inc. Team",
+      "homepage": "https://pypi.org/project/transformers/",
+      "metadata": {
+        "manifest_type": "requirements.txt",
+        "line": 4,
+        "source_files": [
+          "requirements.txt"
+        ]
+      }
+    },
+    {
+      "name": "requests",
+      "version": "2.31.0",
+      "component_type": "python",
+      "purl": "pkg:pypi/requests@2.31.0",
+      "raw_license": "Apache-2.0",
+      "normalized_license": "Apache-2.0",
+      "source_file": "requirements.txt",
+      "copyright_holder": "Kenneth Reitz and Contributors",
+      "homepage": "https://pypi.org/project/requests/",
+      "metadata": {
+        "manifest_type": "requirements.txt",
+        "line": 5,
+        "source_files": [
+          "requirements.txt"
+        ]
+      }
+    },
+    {
+      "name": "agpl-scraper",
+      "version": "1.4.2",
+      "component_type": "python",
+      "purl": "pkg:pypi/agpl-scraper@1.4.2",
+      "raw_license": "AGPL-3.0-only",
+      "normalized_license": "AGPL-3.0-only",
+      "source_file": "requirements.txt",
+      "copyright_holder": "Open Scraper Collective",
+      "homepage": "https://pypi.org/project/agpl-scraper/",
+      "metadata": {
+        "manifest_type": "requirements.txt",
+        "line": 8,
+        "source_files": [
+          "requirements.txt"
+        ]
+      }
+    },
+    {
+      "name": "axios",
+      "version": "1.6.8",
+      "component_type": "node",
+      "purl": "pkg:npm/axios@1.6.8",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "source_file": "package.json",
+      "copyright_holder": "Matt Zabriskie and Contributors",
+      "homepage": "https://www.npmjs.com/package/axios",
+      "metadata": {
+        "manifest_type": "package.json",
+        "section": "dependencies",
+        "source_files": [
+          "package.json"
+        ]
+      }
+    },
+    {
+      "name": "react",
+      "version": "18.2.0",
+      "component_type": "node",
+      "purl": "pkg:npm/react@18.2.0",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "source_file": "package.json",
+      "copyright_holder": "Meta Platforms, Inc. and Affiliates",
+      "homepage": "https://www.npmjs.com/package/react",
+      "metadata": {
+        "manifest_type": "package.json",
+        "section": "dependencies",
+        "source_files": [
+          "package.json"
+        ]
+      }
+    },
+    {
+      "name": "zod",
+      "version": "3.22.4",
+      "component_type": "node",
+      "purl": "pkg:npm/zod@3.22.4",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "source_file": "package.json",
+      "copyright_holder": "Colin McDonnell",
+      "homepage": "https://www.npmjs.com/package/zod",
+      "metadata": {
+        "manifest_type": "package.json",
+        "section": "dependencies",
+        "source_files": [
+          "package.json"
+        ]
+      }
+    },
+    {
+      "name": "typescript",
+      "version": "5.4.2",
+      "component_type": "node",
+      "purl": "pkg:npm/typescript@5.4.2",
+      "raw_license": "Apache-2.0",
+      "normalized_license": "Apache-2.0",
+      "source_file": "package.json",
+      "copyright_holder": "Microsoft Corporation",
+      "homepage": "https://www.npmjs.com/package/typescript",
+      "metadata": {
+        "manifest_type": "package.json",
+        "section": "devDependencies",
+        "source_files": [
+          "package.json"
+        ]
+      }
+    },
+    {
+      "name": "mistralai/Mistral-7B-v0.1",
+      "version": "main",
+      "component_type": "ml_model",
+      "purl": "pkg:ml/mistralai/Mistral-7B-v0.1@main",
+      "raw_license": "Apache-2.0",
+      "normalized_license": "Apache-2.0",
+      "source_file": "config.json",
+      "copyright_holder": "Mistral AI",
+      "homepage": "https://huggingface.co/mistralai/Mistral-7B-v0.1",
+      "metadata": {
+        "artifact_type": "model_manifest",
+        "manifest_file": "config.json",
+        "model_type": "mistral",
+        "transformers_version": "4.39.0",
+        "source_files": [
+          "config.json"
+        ]
+      }
+    },
+    {
+      "name": "meta-llama/Llama-3-8B",
+      "version": "main",
+      "component_type": "ml_model",
+      "purl": "pkg:ml/meta-llama/Llama-3-8B@main",
+      "raw_license": "Llama-3-Community",
+      "normalized_license": "Llama-3-Community",
+      "source_file": "inference.py",
+      "copyright_holder": "Meta Platforms, Inc.",
+      "homepage": "https://huggingface.co/meta-llama/Llama-3-8B",
+      "metadata": {
+        "artifact_type": "code_reference",
+        "detection_method": "from_pretrained",
+        "source_files": [
+          "inference.py"
+        ]
+      }
+    },
+    {
+      "name": "lmsys/vicuna-13b-v1.5",
+      "version": "1.5",
+      "component_type": "ml_model",
+      "purl": "pkg:ml/lmsys/vicuna-13b-v1.5@1.5",
+      "raw_license": "CC-BY-NC-4.0",
+      "normalized_license": "CC-BY-NC-4.0",
+      "source_file": "model_config.json",
+      "copyright_holder": "Large Model Systems Organization (LMSYS)",
+      "homepage": "https://huggingface.co/lmsys/vicuna-13b-v1.5",
+      "metadata": {
+        "artifact_type": "model_manifest",
+        "manifest_file": "model_config.json",
+        "model_type": "llama",
+        "source_files": [
+          "model_config.json"
+        ]
+      }
+    },
+    {
+      "name": "stabilityai/stable-diffusion-xl-base-1.0",
+      "version": "1.0",
+      "component_type": "ml_model",
+      "purl": "pkg:ml/stabilityai/stable-diffusion-xl-base-1.0@1.0",
+      "raw_license": "CreativeML OpenRAIL-M",
+      "normalized_license": "OpenRAIL-M",
+      "source_file": "model_config.json",
+      "copyright_holder": "Stability AI Ltd.",
+      "homepage": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0",
+      "metadata": {
+        "artifact_type": "model_manifest",
+        "manifest_file": "model_config.json",
+        "model_type": "stable-diffusion-xl",
+        "source_files": [
+          "model_config.json"
+        ]
+      }
+    }
+  ],
+  "violations": [
+    {
+      "component_name": "agpl-scraper",
+      "component_version": "1.4.2",
+      "component_type": "python",
+      "source_file": "requirements.txt",
+      "raw_license": "AGPL-3.0-only",
+      "normalized_license": "AGPL-3.0-only",
+      "license_category": "NETWORK_COPYLEFT",
+      "rule_id": "RULE-CRIT-AGPL-NETWORK",
+      "risk_level": "RISK_CRITICAL",
+      "flag_type": "COPYLEFT_CONTAMINATION",
+      "legal_explanation": "Component 'agpl-scraper' (AGPL-3.0-only) is governed by a network copyleft license (AGPL-3.0/SSPL Section 13). Deploying or interacting with this component in a SAAS_HOSTED environment triggers mandatory disclosure of the complete Corresponding Source code of the entire service or distributed application.",
+      "remediation_advice": "Remove 'agpl-scraper' immediately or replace it with a permissive (MIT/Apache-2.0/BSD-3-Clause) alternative such as 'httpx' (BSD-3-Clause) + 'beautifulsoup4' (MIT) or 'scrapy' (BSD-3-Clause). Isolating AGPL components behind an internal microservice may still trigger Section 13 network interaction obligations if user requests flow through it.",
+      "obligations": [
+        "Disclose complete Corresponding Source code to all network/distributed users under AGPL-3.0",
+        "Or remove/replace the component prior to deployment"
+      ]
+    },
+    {
+      "component_name": "meta-llama/Llama-3-8B",
+      "component_version": "main",
+      "component_type": "ml_model",
+      "source_file": "inference.py",
+      "raw_license": "Llama-3-Community",
+      "normalized_license": "Llama-3-Community",
+      "license_category": "COMMUNITY_RESTRICTED",
+      "rule_id": "RULE-WARN-LLAMA-COMMUNITY",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "MODEL_COMMUNITY_RIDER",
+      "legal_explanation": "Model weight 'meta-llama/Llama-3-8B' (Llama-3-Community) imposes user-count and usage restrictions that require review against terms of service: (1) products or services exceeding 700 million Monthly Active Users (MAU) on the model release date require a separate commercial license from Meta; (2) mandatory 'Built with Llama' UI/documentation attribution; and (3) compliance with the Llama Acceptable Use Policy.",
+      "remediation_advice": "Verify that company/product scale is below the 700M MAU threshold, display 'Built with Meta Llama' prominently in product UI and documentation, and enforce the Llama Acceptable Use Policy. Otherwise, replace 'meta-llama/Llama-3-8B' with an Apache-2.0 model such as 'mistralai/Mistral-7B-v0.1' (Apache-2.0) or 'Qwen/Qwen2.5-7B' (Apache-2.0).",
+      "obligations": [
+        "Confirm Monthly Active Users (MAU) did not exceed 700M on model release date",
+        "Display 'Built with Meta Llama' prominently on websites, UI, and documentation",
+        "Include Meta Llama Community License Agreement in distributions and notices",
+        "Enforce Meta Acceptable Use Policy in downstream terms"
+      ]
+    },
+    {
+      "component_name": "lmsys/vicuna-13b-v1.5",
+      "component_version": "1.5",
+      "component_type": "ml_model",
+      "source_file": "model_config.json",
+      "raw_license": "CC-BY-NC-4.0",
+      "normalized_license": "CC-BY-NC-4.0",
+      "license_category": "NON_COMMERCIAL",
+      "rule_id": "RULE-CRIT-NONCOMMERCIAL-AI",
+      "risk_level": "RISK_CRITICAL",
+      "flag_type": "NON_COMMERCIAL_RESTRICTION",
+      "legal_explanation": "Component/Model weight 'lmsys/vicuna-13b-v1.5' (CC-BY-NC-4.0) carries a strict Non-Commercial restriction. Using 'lmsys/vicuna-13b-v1.5' for inference, fine-tuning, synthetic data generation, or production serving in a commercial context violates the license grant.",
+      "remediation_advice": "Replace 'lmsys/vicuna-13b-v1.5' with commercially permissive model weights or libraries (e.g., Apache-2.0 or MIT licensed weights) such as 'mistralai/Mistral-7B-Instruct-v0.2' (Apache-2.0), or negotiate a direct commercial license with the rights holder.",
+      "obligations": [
+        "Prohibited from any commercial use, revenue-generating SaaS inference, or commercial product integration"
+      ]
+    },
+    {
+      "component_name": "stabilityai/stable-diffusion-xl-base-1.0",
+      "component_version": "1.0",
+      "component_type": "ml_model",
+      "source_file": "model_config.json",
+      "raw_license": "CreativeML OpenRAIL-M",
+      "normalized_license": "OpenRAIL-M",
+      "license_category": "BEHAVIORAL_RAIL",
+      "rule_id": "RULE-WARN-OPENRAIL-BEHAVIORAL",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "BEHAVIORAL_RAIL_RESTRICTION",
+      "legal_explanation": "Model weight 'stabilityai/stable-diffusion-xl-base-1.0' (OpenRAIL-M) permits commercial use but enforces mandatory Responsible AI behavioral use-case restrictions (Attachment A), including prohibitions on biometric surveillance/identification, medical diagnosis or clinical advice, administration of justice, and generating disinformation. These restrictions must legally flow down to all downstream users.",
+      "remediation_advice": "Audit your product features and Terms of Service to ensure 'stabilityai/stable-diffusion-xl-base-1.0' is not used for restricted Attachment A domains (biometrics, medical diagnosis, law enforcement), and include the mandatory OpenRAIL Use-Based Restrictions in your user-facing Terms of Service. If unrestricted weights are required, switch to an Apache-2.0 alternative such as an Apache-2.0 licensed image generation model (e.g., 'black-forest-labs/FLUX.1-schnell' under Apache-2.0).",
+      "obligations": [
+        "Pass through OpenRAIL Attachment A Use-Based Restrictions in downstream Terms of Service / EULA",
+        "Ensure model is not used for medical diagnosis, biometric categorization, or law enforcement",
+        "Include OpenRAIL-M license notice and attribution in THIRD_PARTY_NOTICES.md"
+      ]
+    }
+  ],
+  "inter_license_conflicts": [],
+  "findings": [
+    {
+      "component_name": "fastapi",
+      "component_version": "0.110.0",
+      "component_type": "python",
+      "source_file": "requirements.txt",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'fastapi' (MIT) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "pydantic",
+      "component_version": "2.6.4",
+      "component_type": "python",
+      "source_file": "requirements.txt",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'pydantic' (MIT) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "transformers",
+      "component_version": "4.39.0",
+      "component_type": "python",
+      "source_file": "requirements.txt",
+      "raw_license": "Apache-2.0",
+      "normalized_license": "Apache-2.0",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'transformers' (Apache-2.0) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "requests",
+      "component_version": "2.31.0",
+      "component_type": "python",
+      "source_file": "requirements.txt",
+      "raw_license": "Apache-2.0",
+      "normalized_license": "Apache-2.0",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'requests' (Apache-2.0) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "agpl-scraper",
+      "component_version": "1.4.2",
+      "component_type": "python",
+      "source_file": "requirements.txt",
+      "raw_license": "AGPL-3.0-only",
+      "normalized_license": "AGPL-3.0-only",
+      "license_category": "NETWORK_COPYLEFT",
+      "rule_id": "RULE-CRIT-AGPL-NETWORK",
+      "risk_level": "RISK_CRITICAL",
+      "flag_type": "COPYLEFT_CONTAMINATION",
+      "legal_explanation": "Component 'agpl-scraper' (AGPL-3.0-only) is governed by a network copyleft license (AGPL-3.0/SSPL Section 13). Deploying or interacting with this component in a SAAS_HOSTED environment triggers mandatory disclosure of the complete Corresponding Source code of the entire service or distributed application.",
+      "remediation_advice": "Remove 'agpl-scraper' immediately or replace it with a permissive (MIT/Apache-2.0/BSD-3-Clause) alternative such as 'httpx' (BSD-3-Clause) + 'beautifulsoup4' (MIT) or 'scrapy' (BSD-3-Clause). Isolating AGPL components behind an internal microservice may still trigger Section 13 network interaction obligations if user requests flow through it.",
+      "obligations": [
+        "Disclose complete Corresponding Source code to all network/distributed users under AGPL-3.0",
+        "Or remove/replace the component prior to deployment"
+      ]
+    },
+    {
+      "component_name": "axios",
+      "component_version": "1.6.8",
+      "component_type": "node",
+      "source_file": "package.json",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'axios' (MIT) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "react",
+      "component_version": "18.2.0",
+      "component_type": "node",
+      "source_file": "package.json",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'react' (MIT) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "zod",
+      "component_version": "3.22.4",
+      "component_type": "node",
+      "source_file": "package.json",
+      "raw_license": "MIT",
+      "normalized_license": "MIT",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'zod' (MIT) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "typescript",
+      "component_version": "5.4.2",
+      "component_type": "node",
+      "source_file": "package.json",
+      "raw_license": "Apache-2.0",
+      "normalized_license": "Apache-2.0",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'typescript' (Apache-2.0) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "mistralai/Mistral-7B-v0.1",
+      "component_version": "main",
+      "component_type": "ml_model",
+      "source_file": "config.json",
+      "raw_license": "Apache-2.0",
+      "normalized_license": "Apache-2.0",
+      "license_category": "PERMISSIVE",
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "legal_explanation": "Component 'mistralai/Mistral-7B-v0.1' (Apache-2.0) is permissively licensed and compatible with SAAS_HOSTED deployments provided standard copyright and attribution notices are retained.",
+      "remediation_advice": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "component_name": "meta-llama/Llama-3-8B",
+      "component_version": "main",
+      "component_type": "ml_model",
+      "source_file": "inference.py",
+      "raw_license": "Llama-3-Community",
+      "normalized_license": "Llama-3-Community",
+      "license_category": "COMMUNITY_RESTRICTED",
+      "rule_id": "RULE-WARN-LLAMA-COMMUNITY",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "MODEL_COMMUNITY_RIDER",
+      "legal_explanation": "Model weight 'meta-llama/Llama-3-8B' (Llama-3-Community) imposes user-count and usage restrictions that require review against terms of service: (1) products or services exceeding 700 million Monthly Active Users (MAU) on the model release date require a separate commercial license from Meta; (2) mandatory 'Built with Llama' UI/documentation attribution; and (3) compliance with the Llama Acceptable Use Policy.",
+      "remediation_advice": "Verify that company/product scale is below the 700M MAU threshold, display 'Built with Meta Llama' prominently in product UI and documentation, and enforce the Llama Acceptable Use Policy. Otherwise, replace 'meta-llama/Llama-3-8B' with an Apache-2.0 model such as 'mistralai/Mistral-7B-v0.1' (Apache-2.0) or 'Qwen/Qwen2.5-7B' (Apache-2.0).",
+      "obligations": [
+        "Confirm Monthly Active Users (MAU) did not exceed 700M on model release date",
+        "Display 'Built with Meta Llama' prominently on websites, UI, and documentation",
+        "Include Meta Llama Community License Agreement in distributions and notices",
+        "Enforce Meta Acceptable Use Policy in downstream terms"
+      ]
+    },
+    {
+      "component_name": "lmsys/vicuna-13b-v1.5",
+      "component_version": "1.5",
+      "component_type": "ml_model",
+      "source_file": "model_config.json",
+      "raw_license": "CC-BY-NC-4.0",
+      "normalized_license": "CC-BY-NC-4.0",
+      "license_category": "NON_COMMERCIAL",
+      "rule_id": "RULE-CRIT-NONCOMMERCIAL-AI",
+      "risk_level": "RISK_CRITICAL",
+      "flag_type": "NON_COMMERCIAL_RESTRICTION",
+      "legal_explanation": "Component/Model weight 'lmsys/vicuna-13b-v1.5' (CC-BY-NC-4.0) carries a strict Non-Commercial restriction. Using 'lmsys/vicuna-13b-v1.5' for inference, fine-tuning, synthetic data generation, or production serving in a commercial context violates the license grant.",
+      "remediation_advice": "Replace 'lmsys/vicuna-13b-v1.5' with commercially permissive model weights or libraries (e.g., Apache-2.0 or MIT licensed weights) such as 'mistralai/Mistral-7B-Instruct-v0.2' (Apache-2.0), or negotiate a direct commercial license with the rights holder.",
+      "obligations": [
+        "Prohibited from any commercial use, revenue-generating SaaS inference, or commercial product integration"
+      ]
+    },
+    {
+      "component_name": "stabilityai/stable-diffusion-xl-base-1.0",
+      "component_version": "1.0",
+      "component_type": "ml_model",
+      "source_file": "model_config.json",
+      "raw_license": "CreativeML OpenRAIL-M",
+      "normalized_license": "OpenRAIL-M",
+      "license_category": "BEHAVIORAL_RAIL",
+      "rule_id": "RULE-WARN-OPENRAIL-BEHAVIORAL",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "BEHAVIORAL_RAIL_RESTRICTION",
+      "legal_explanation": "Model weight 'stabilityai/stable-diffusion-xl-base-1.0' (OpenRAIL-M) permits commercial use but enforces mandatory Responsible AI behavioral use-case restrictions (Attachment A), including prohibitions on biometric surveillance/identification, medical diagnosis or clinical advice, administration of justice, and generating disinformation. These restrictions must legally flow down to all downstream users.",
+      "remediation_advice": "Audit your product features and Terms of Service to ensure 'stabilityai/stable-diffusion-xl-base-1.0' is not used for restricted Attachment A domains (biometrics, medical diagnosis, law enforcement), and include the mandatory OpenRAIL Use-Based Restrictions in your user-facing Terms of Service. If unrestricted weights are required, switch to an Apache-2.0 alternative such as an Apache-2.0 licensed image generation model (e.g., 'black-forest-labs/FLUX.1-schnell' under Apache-2.0).",
+      "obligations": [
+        "Pass through OpenRAIL Attachment A Use-Based Restrictions in downstream Terms of Service / EULA",
+        "Ensure model is not used for medical diagnosis, biometric categorization, or law enforcement",
+        "Include OpenRAIL-M license notice and attribution in THIRD_PARTY_NOTICES.md"
+      ]
+    }
+  ]
+}

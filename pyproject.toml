@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "lexibom"
+version = "0.1.0"
+description = "Open-Source & AI Model Weight License Compliance Scanner (MVP)"
+authors = ["LexiBOM Team <legal-eng@lexibom.dev>"]
+readme = "README.md"
+license = "Apache-2.0"
+packages = [{ include = "lexibom" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+typer = ">=0.9.0"
+click = ">=8.1.0"
+rich = ">=13.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.4.0"
+pytest-cov = ">=4.1.0"
+mypy = ">=1.5.0"
+
+[tool.poetry.scripts]
+lexibom = "lexibom.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v"
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+exclude = ["tests/fixtures"]

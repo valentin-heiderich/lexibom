@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0.0",
+  "deployment_modes": [
+    "PROPRIETARY_DISTRIBUTED",
+    "SAAS_HOSTED",
+    "OPEN_SOURCE"
+  ],
+  "context_presets": {
+    "commercial-saas": {
+      "target_distribution_type": "SAAS_HOSTED",
+      "is_commercial": true,
+      "description": "Commercial cloud/SaaS application accessed over a network"
+    },
+    "proprietary-distributed": {
+      "target_distribution_type": "PROPRIETARY_DISTRIBUTED",
+      "is_commercial": true,
+      "description": "Proprietary binary, container, mobile app, or on-prem software distribution"
+    },
+    "commercial-distributed": {
+      "target_distribution_type": "PROPRIETARY_DISTRIBUTED",
+      "is_commercial": true,
+      "description": "Commercial binary or on-prem software distribution"
+    },
+    "open-source": {
+      "target_distribution_type": "OPEN_SOURCE",
+      "is_commercial": true,
+      "description": "Open-source repository distribution"
+    },
+    "research-noncommercial": {
+      "target_distribution_type": "SAAS_HOSTED",
+      "is_commercial": false,
+      "description": "Non-commercial academic or scientific research environment"
+    }
+  },
+  "rules": [
+    {
+      "rule_id": "RULE-CRIT-AGPL-NETWORK",
+      "risk_level": "RISK_CRITICAL",
+      "flag_type": "COPYLEFT_CONTAMINATION",
+      "licenses": [
+        "AGPL-3.0-only",
+        "AGPL-3.0-or-later",
+        "SSPL-1.0"
+      ],
+      "distribution_types": [
+        "SAAS_HOSTED",
+        "PROPRIETARY_DISTRIBUTED"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Component '{name}' ({license}) is governed by a network copyleft license (AGPL-3.0/SSPL Section 13). Deploying or interacting with this component in a {distribution_type} environment triggers mandatory disclosure of the complete Corresponding Source code of the entire service or distributed application.",
+      "remediation_template": "Remove '{name}' immediately or replace it with a permissive (MIT/Apache-2.0/BSD-3-Clause) alternative{alternative_hint}. Isolating AGPL components behind an internal microservice may still trigger Section 13 network interaction obligations if user requests flow through it.",
+      "obligations": [
+        "Disclose complete Corresponding Source code to all network/distributed users under AGPL-3.0",
+        "Or remove/replace the component prior to deployment"
+      ]
+    },
+    {
+      "rule_id": "RULE-CRIT-GPL-DISTRIBUTED",
+      "risk_level": "RISK_CRITICAL",
+      "flag_type": "COPYLEFT_CONTAMINATION",
+      "licenses": [
+        "GPL-2.0-only",
+        "GPL-2.0-or-later",
+        "GPL-3.0-only",
+        "GPL-3.0-or-later",
+        "CC-BY-SA-4.0"
+      ],
+      "distribution_types": [
+        "PROPRIETARY_DISTRIBUTED"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Component '{name}' ({license}) is a strong copyleft dependency linked or bundled in a PROPRIETARY_DISTRIBUTED build. Distributing binaries, containers, or on-premise packages containing {license} code requires licensing the combined derivative work under {license} and providing full source code.",
+      "remediation_template": "Replace '{name}' with a permissive (MIT/Apache-2.0/BSD) alternative{alternative_hint}, or obtain a commercial dual-license exception from the copyright holder.",
+      "obligations": [
+        "Provide full source code and build installation scripts to recipients under GPL terms",
+        "Refrain from imposing proprietary EULA restrictions on the distributed binary"
+      ]
+    },
+    {
+      "rule_id": "RULE-CRIT-NONCOMMERCIAL-AI",
+      "risk_level": "RISK_CRITICAL",
+      "flag_type": "NON_COMMERCIAL_RESTRICTION",
+      "licenses": [
+        "CC-BY-NC-4.0",
+        "CC-BY-NC-3.0",
+        "CC-BY-NC-SA-4.0",
+        "CC-BY-NC-ND-4.0",
+        "NonCommercial-Research-Only"
+      ],
+      "distribution_types": [
+        "SAAS_HOSTED",
+        "PROPRIETARY_DISTRIBUTED",
+        "OPEN_SOURCE"
+      ],
+      "commercial_only": true,
+      "explanation_template": "Component/Model weight '{name}' ({license}) carries a strict Non-Commercial restriction. Using '{name}' for inference, fine-tuning, synthetic data generation, or production serving in a commercial context violates the license grant.",
+      "remediation_template": "Replace '{name}' with commercially permissive model weights or libraries (e.g., Apache-2.0 or MIT licensed weights){alternative_hint}, or negotiate a direct commercial license with the rights holder.",
+      "obligations": [
+        "Prohibited from any commercial use, revenue-generating SaaS inference, or commercial product integration"
+      ]
+    },
+    {
+      "rule_id": "RULE-WARN-OPENRAIL-BEHAVIORAL",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "BEHAVIORAL_RAIL_RESTRICTION",
+      "licenses": [
+        "OpenRAIL-M",
+        "OpenRAIL-D"
+      ],
+      "distribution_types": [
+        "SAAS_HOSTED",
+        "PROPRIETARY_DISTRIBUTED",
+        "OPEN_SOURCE"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Model weight '{name}' ({license}) permits commercial use but enforces mandatory Responsible AI behavioral use-case restrictions (Attachment A), including prohibitions on biometric surveillance/identification, medical diagnosis or clinical advice, administration of justice, and generating disinformation. These restrictions must legally flow down to all downstream users.",
+      "remediation_template": "Audit your product features and Terms of Service to ensure '{name}' is not used for restricted Attachment A domains (biometrics, medical diagnosis, law enforcement), and include the mandatory OpenRAIL Use-Based Restrictions in your user-facing Terms of Service. If unrestricted weights are required, switch to an Apache-2.0 alternative{alternative_hint}.",
+      "obligations": [
+        "Pass through OpenRAIL Attachment A Use-Based Restrictions in downstream Terms of Service / EULA",
+        "Ensure model is not used for medical diagnosis, biometric categorization, or law enforcement",
+        "Include OpenRAIL-M license notice and attribution in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "rule_id": "RULE-WARN-LLAMA-COMMUNITY",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "MODEL_COMMUNITY_RIDER",
+      "licenses": [
+        "Llama-3-Community",
+        "Llama-2-Community"
+      ],
+      "distribution_types": [
+        "SAAS_HOSTED",
+        "PROPRIETARY_DISTRIBUTED",
+        "OPEN_SOURCE"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Model weight '{name}' ({license}) imposes user-count and usage restrictions that require review against terms of service: (1) products or services exceeding 700 million Monthly Active Users (MAU) on the model release date require a separate commercial license from Meta; (2) mandatory 'Built with Llama' UI/documentation attribution; and (3) compliance with the Llama Acceptable Use Policy.",
+      "remediation_template": "Verify that company/product scale is below the 700M MAU threshold, display 'Built with Meta Llama' prominently in product UI and documentation, and enforce the Llama Acceptable Use Policy. Otherwise, replace '{name}' with an Apache-2.0 model{alternative_hint}.",
+      "obligations": [
+        "Confirm Monthly Active Users (MAU) did not exceed 700M on model release date",
+        "Display 'Built with Meta Llama' prominently on websites, UI, and documentation",
+        "Include Meta Llama Community License Agreement in distributions and notices",
+        "Enforce Meta Acceptable Use Policy in downstream terms"
+      ]
+    },
+    {
+      "rule_id": "RULE-WARN-CUSTOM-MODEL-RIDER",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "MODEL_COMMUNITY_RIDER",
+      "licenses": [
+        "Gemma-Terms-of-Use",
+        "Custom-Model-Rider"
+      ],
+      "distribution_types": [
+        "SAAS_HOSTED",
+        "PROPRIETARY_DISTRIBUTED",
+        "OPEN_SOURCE"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Model weight '{name}' ({license}) includes custom model rider and prohibited-use covenants that must be enforced in downstream applications and user agreements.",
+      "remediation_template": "Review the specific model rider and prohibited use policy for '{name}', incorporate required flow-down clauses into your Terms of Service, or switch to an Apache-2.0/MIT model{alternative_hint}.",
+      "obligations": [
+        "Flow down prohibited use policy restrictions to end users",
+        "Include model license attribution notice in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "rule_id": "RULE-WARN-WEAK-COPYLEFT",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "WEAK_COPYLEFT_OBLIGATION",
+      "licenses": [
+        "LGPL-2.1-only",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-only",
+        "LGPL-3.0-or-later",
+        "MPL-2.0",
+        "EPL-2.0"
+      ],
+      "distribution_types": [
+        "PROPRIETARY_DISTRIBUTED",
+        "SAAS_HOSTED",
+        "OPEN_SOURCE"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Component '{name}' ({license}) is governed by a weak copyleft license. Modifications to '{name}' files/libraries must be released under {license}, and PROPRIETARY_DISTRIBUTED builds using LGPL libraries must use dynamic linking (allowing users to relink modified versions of the library).",
+      "remediation_template": "Ensure '{name}' is dynamically linked without direct source modification, document dynamic linking compliance, and include {license} notices in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Link LGPL libraries dynamically (no static binary linking without object files)",
+        "Disclose source code for any direct file-level modifications to the component",
+        "Include copyright and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "rule_id": "RULE-WARN-GPL-SAAS",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "COPYLEFT_BOUNDARY_WARNING",
+      "licenses": [
+        "GPL-2.0-only",
+        "GPL-2.0-or-later",
+        "GPL-3.0-only",
+        "GPL-3.0-or-later",
+        "CC-BY-SA-4.0"
+      ],
+      "distribution_types": [
+        "SAAS_HOSTED"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Component '{name}' ({license}) is a strong copyleft package used in a SAAS_HOSTED deployment. While standard GPL (unlike AGPL) is not triggered by pure backend network interaction, bundling '{name}' into downloadable client assets (e.g., frontend JS bundles, CLI agents, or SDKs) will trigger full copyleft source disclosure.",
+      "remediation_template": "Verify '{name}' runs strictly on backend servers and is never shipped to client browsers, mobile apps, or on-premise appliances. Consider replacing with a permissive alternative{alternative_hint}.",
+      "obligations": [
+        "Keep component strictly server-side; do not bundle into client-facing downloads or JS bundles"
+      ]
+    },
+    {
+      "rule_id": "RULE-WARN-UNKNOWN-LICENSE",
+      "risk_level": "RISK_WARNING",
+      "flag_type": "UNKNOWN_LICENSE",
+      "licenses": [
+        "UNKNOWN",
+        "Proprietary"
+      ],
+      "distribution_types": [
+        "SAAS_HOSTED",
+        "PROPRIETARY_DISTRIBUTED",
+        "OPEN_SOURCE"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Component '{name}' has an unverified or proprietary license ('{raw_license}'). Under copyright law, absence of an explicit license grants no rights to use, modify, or distribute the software or model weights.",
+      "remediation_template": "Inspect the upstream repository or model card for '{name}' to verify its license terms, or replace it with a component carrying a verified SPDX/ML license.",
+      "obligations": [
+        "Manually verify upstream license grant before production deployment"
+      ]
+    },
+    {
+      "rule_id": "RULE-OK-PERMISSIVE",
+      "risk_level": "RISK_COMPLIANT",
+      "flag_type": "PERMISSIVE_COMPLIANT",
+      "licenses": [
+        "MIT",
+        "Apache-2.0",
+        "BSD-3-Clause",
+        "BSD-2-Clause",
+        "ISC",
+        "0BSD",
+        "Unlicense",
+        "CC-BY-4.0"
+      ],
+      "distribution_types": [
+        "SAAS_HOSTED",
+        "PROPRIETARY_DISTRIBUTED",
+        "OPEN_SOURCE"
+      ],
+      "commercial_only": false,
+      "explanation_template": "Component '{name}' ({license}) is permissively licensed and compatible with {distribution_type} deployments provided standard copyright and attribution notices are retained.",
+      "remediation_template": "No remediation required. Retain attribution notice in THIRD_PARTY_NOTICES.md.",
+      "obligations": [
+        "Retain copyright notice and license text in THIRD_PARTY_NOTICES.md"
+      ]
+    }
+  ],
+  "inter_license_conflicts": [
+    {
+      "conflict_id": "CONFLICT-PATENT-APACHE2-GPL2",
+      "flag_type": "PATENT_CLAUSE_FRICTION",
+      "risk_level": "RISK_WARNING",
+      "license_a": "Apache-2.0",
+      "license_b": "GPL-2.0-only",
+      "explanation": "Patent Clause Friction detected between Apache-2.0 ({components_a}) and GPL-2.0-only ({components_b}). Apache License 2.0 Section 3 includes patent litigation termination and indemnification provisions that the Free Software Foundation considers incompatible additional restrictions under GPL-2.0-only (Section 6).",
+      "remediation": "Upgrade GPL-2.0-only component(s) ({components_b}) to 'GPL-2.0-or-later' / 'GPL-3.0' (which is compatible with Apache-2.0 patent clauses), or replace the GPL-2.0-only dependency with an Apache-2.0/MIT alternative."
+    }
+  ],
+  "recommended_alternatives": {
+    "agpl-scraper": "'httpx' (BSD-3-Clause) + 'beautifulsoup4' (MIT) or 'scrapy' (BSD-3-Clause)",
+    "pymupdf": "'pypdf' (BSD-3-Clause) or 'pdfplumber' (MIT)",
+    "fitz": "'pypdf' (BSD-3-Clause) or 'pdfplumber' (MIT)",
+    "minio": "'boto3' (Apache-2.0) with S3-compatible Apache-2.0 storage",
+    "pyqt5": "'pyside6' (LGPL-3.0) or web-based UI",
+    "pyqt6": "'pyside6' (LGPL-3.0) or web-based UI",
+    "mysqlclient": "'pymysql' (MIT) or 'asyncmy' (Apache-2.0)",
+    "meta-llama/llama-3-8b": "'mistralai/Mistral-7B-v0.1' (Apache-2.0) or 'Qwen/Qwen2.5-7B' (Apache-2.0)",
+    "meta-llama/llama-2-7b-hf": "'mistralai/Mistral-7B-v0.1' (Apache-2.0)",
+    "lmsys/vicuna-13b-v1.5": "'mistralai/Mistral-7B-Instruct-v0.2' (Apache-2.0)",
+    "stabilityai/stable-diffusion-xl-base-1.0": "an Apache-2.0 licensed image generation model (e.g., 'black-forest-labs/FLUX.1-schnell' under Apache-2.0)"
+  }
+}
